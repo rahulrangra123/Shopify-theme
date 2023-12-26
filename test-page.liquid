@@ -1,0 +1,42 @@
+{% if section.settings.enabletext %}
+
+<div style="text-align: {{ section.settings.text_position }}; font-size: 30px;" >{{ section.settings.textid }}</div>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Custom page text",
+    "settings": [
+      {
+        "type": "text",
+        "id": "textid",
+        "label": "Enter text",
+        "default": "Rahul is here"
+      },
+      {
+        "type": "checkbox",
+        "id": "enabletext",
+        "label": "Enter text",
+        "default": true
+      },
+        {
+        "type": "select",
+        "id": "text_position",
+        "label": "Postion your text",
+        "options": [
+          {"value": "left", "label": "left"},
+          {"value": "center", "label": "center"},
+          {"value": "right", "label": "right"}
+          ],
+      "default": "left"
+    
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
